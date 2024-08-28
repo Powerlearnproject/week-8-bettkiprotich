@@ -49,4 +49,14 @@ Select a Sustainable Development Goal (SDG) that resonates with you and develop 
 - Excel workbook with data analysis and dashboard
 - Integration documentation
 - Pitch deck presentation (Provide the link e.g Canva or Gamma in your documentation)
+- Household (Household_ID, Location, Income_Level, Household_Size)  
+    |  
+    |---- Food_Inventory (Item_ID, Household_ID, Food_Item, Quantity, Expiration_Date)  
+    |  
+    |---- Food_Access (Access_ID, Household_ID, Access_Date, Food_Source, Quantity_Acquired)  
+    |  
+    |---- Food_Waste (Waste_ID, Household_ID, Food_Item, Quantity_Wasted, Waste_Date)  
+    |  
+    |---- Nutritional_Information (Nutrient_ID, Food_Item, Calories, Protein, Carbohydrates, Fats)
+
 
