@@ -1,0 +1,37 @@
+CREATE TABLE Farmers (
+    FarmerID INT PRIMARY KEY,
+    Name VARCHAR(100),
+    Location VARCHAR(100)
+);
+
+CREATE TABLE Crops (
+    CropID INT PRIMARY KEY,
+    CropName VARCHAR(100),
+    CropType VARCHAR(50)
+);
+
+CREATE TABLE Harvest (
+    HarvestID INT PRIMARY KEY,
+    FarmerID INT,
+    CropID INT,
+    HarvestDate DATE,
+    QuantityHarvested DECIMAL(10,2),
+    QuantityWasted DECIMAL(10,2),
+    FOREIGN KEY (FarmerID) REFERENCES Farmers(FarmerID),
+    FOREIGN KEY (CropID) REFERENCES Crops(CropID)
+);
+
+CREATE TABLE Markets (
+    MarketID INT PRIMARY KEY,
+    MarketName VARCHAR(100),
+    DemandLevel DECIMAL(10,2),
+    Location VARCHAR(100)
+);
+
+CREATE TABLE FoodWastage (
+    WastageID INT PRIMARY KEY,
+    HarvestID INT,
+    WastageReason VARCHAR(100),
+    WastageQuantity DECIMAL(10,2),
+    FOREIGN KEY (HarvestID) REFERENCES Harvest(HarvestID)
+);
